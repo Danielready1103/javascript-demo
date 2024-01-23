@@ -85,3 +85,17 @@ function getRandomInt(start, end) {
     let x = Math.floor(Math.random() * end) + start;
     return x;
 }
+
+x1 = 3.5;
+x2 = 3.6;
+document.write(parseInt(x1));
+document.write(Number(x2));
+
+let user = {
+    name: "Jerry",
+    height: 178,
+    weight: 68.2
+}
+
+console.log(user, typeof (user));
+console.log(user.name, user.height, user["weight"]);

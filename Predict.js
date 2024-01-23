@@ -41,19 +41,3 @@ for (let i = 0; i < rows.length; i++) {
     console.log(result);
     document.write(`<h3>第${i + 1}組號碼: ${result}</h3><hr>`);
 }
-
-x1 = 3.5;
-x2 = 3.6;
-document.write(parseInt(x1));
-document.write(Number(x2));
-
-let user = {
-    name: "Jerry",
-    height: 178,
-    weight: 68.2
-}
-
-console.log(user, typeof (user));
-console.log(user.name, user.height, user["weight"]);
-
-
