@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initail-scale=1.0">
+    <title>Demo</title>
+</head>
+
+<body>
+    <h1>BMI calculator</h1>
+
+    <script>
+        //宣告變數let優於var
+        let height = prompt('請輸入身高:');
+        let weight = prompt('請輸入體重:');
+        let bmi = weight / ((height / 100) * (height / 100))
+        //字串+數字(自串串接)
+        bmi_result = 'BMI:' + bmi
+
+        let result = "<ul>"
+        result += "<li>身高:" + height + "</li>"
+        result += "<li>體重:" + weight + "</li>"
+        result += "<li>BMI:" + bmi.toFixed(2) + "</li>"
+        //輸出到網頁，可以帶入標籤語法
+        result += "</ul>"
+
+        document.write(result)
+    </script>
+</body>
+
+</html>
+
+</html>
