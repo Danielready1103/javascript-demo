@@ -11,43 +11,50 @@ function compare(a, b) {
     //return b - a
 }
 
-document.write(Date() + "<hr>")
+function getNumbers(num, length) {
+    let rows = [];
+    for (let j = 0; j < num; j++) {
+        let numbers = [];
+        while (true) {
+            let x = getRandomInt(1, 49);
 
-let rows = [];
-for (let j = 0; j < 5; j++) {
-    let numbers = [];
-    while (true) {
-        let x = getRandomInt(1, 49);
+            if (!numbers.includes(x)) {
+                numbers.push(x);
+            }
 
-        if (!numbers.includes(x)) {
-            numbers.push(x);
+            if (numbers.length == length) {
+                break;
+            }
         }
 
-        if (numbers.length == 6) {
-            break;
-        }
+        //排序
+        numbers.sort(compare);
+        rows.push(numbers);
     }
 
-    //排序
-    numbers.sort(compare);
-    rows.push(numbers);
+    return rows;
 }
 
-//排序 numbers.sort(compare); rows.push(numbers); } //輸出樂透號碼到畫面
-console.log(rows);
+function getLottory() {
+    let num = prompt('請輸入要產生幾組號碼:');
+    let length = prompt('請輸入各組別支號碼數:');
+    const lottoryE1 = document.querySelector("#lottory")
+    rows = getNumbers(num, length);
 
-const lottoryE1 = document.querySelector("#lottory")
-for (let i = 0; i < rows.length; i++) {
-    result = rows[i].join(" , ");
-    console.log(result);
-    lottoryE1.innerHTML += `<h3>第${i + 1}組號碼: ${result}</h3><hr>`
-    //document.write(`<h3>第${i + 1}組號碼: ${result}</h3><hr>`);
+    lottoryE1.innerHTML = '';
+    for (let i = 0; i < rows.length; i++) {
+        result = rows[i].join(" , ");
+        //console.log(result);
+        lottoryE1.innerHTML += `<h3>第${i + 1}組號碼: ${result}</h3><hr>`
+        //document.write(`<h3>第${i + 1}組號碼: ${result}</h3><hr>`);
+    }
 }
 
 //更換標籤文字使用
 const h1 = document.querySelector("h1");
-
-console.log(h1, lottoryE1);
 //innerText
 h1.innerHTML = '<u>大樂透</u>'
 h1.style.color = 'blue'
+
+const dateE1 = document.querySelector(".date");
+dateE1.innerText = Date();
