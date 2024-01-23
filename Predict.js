@@ -34,17 +34,19 @@ for (let j = 0; j < 5; j++) {
 }
 
 //排序 numbers.sort(compare); rows.push(numbers); } //輸出樂透號碼到畫面
-//console.log(rows);
+console.log(rows);
 
+const lottoryE1 = document.querySelector("#lottory")
 for (let i = 0; i < rows.length; i++) {
     result = rows[i].join(" , ");
-    //console.log(result);
-    document.write(`<h3>第${i + 1}組號碼: ${result}</h3><hr>`);
+    console.log(result);
+    lottoryE1.innerHTML += `<h3>第${i + 1}組號碼: ${result}</h3><hr>`
+    //document.write(`<h3>第${i + 1}組號碼: ${result}</h3><hr>`);
 }
 
 //更換標籤文字使用
 const h1 = document.querySelector("h1");
-const lottoryE1 = document.querySelector("#lottory")
+
 console.log(h1, lottoryE1);
 //innerText
 h1.innerHTML = '<u>大樂透</u>'
