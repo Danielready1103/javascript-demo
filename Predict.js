@@ -38,14 +38,14 @@ function getNumbers(num, length) {
 function getLottory() {
     let num = prompt('請輸入要產生幾組號碼:');
     let length = prompt('請輸入各組別支號碼數:');
-    const lottoryE1 = document.querySelector("#lottory")
+    const lottoryEl = document.querySelector("#lottory")
     rows = getNumbers(num, length);
 
-    lottoryE1.innerHTML = '';
+    lottoryEl.innerHTML = '';
     for (let i = 0; i < rows.length; i++) {
         result = rows[i].join(" , ");
         //console.log(result);
-        lottoryE1.innerHTML += `<h3>第${i + 1}組號碼: ${result}</h3><hr>`
+        lottoryEl.innerHTML += `<h3>第${i + 1}組號碼: ${result}</h3><hr>`
         //document.write(`<h3>第${i + 1}組號碼: ${result}</h3><hr>`);
     }
 }
@@ -56,5 +56,5 @@ const h1 = document.querySelector("h1");
 h1.innerHTML = '<u>大樂透</u>'
 h1.style.color = 'blue'
 
-const dateE1 = document.querySelector(".date");
-dateE1.innerText = Date();
+const dateEl = document.querySelector(".date");
+dateEl.innerText = Date();
